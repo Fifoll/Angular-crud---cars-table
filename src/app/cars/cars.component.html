@@ -1,0 +1,25 @@
+<input [formControl]="filter" class="form-control">
+<table class="table mt-2">
+    <thead>
+      <tr>
+        <th scope="col">Brand</th>
+        <th scope="col">Model</th>
+        <th scope="col">Year</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let car of cars; let i = index">
+        <tr *ngIf="!filter.value || filter.value === car.brand || filter.value === car.model || filter.value === car.year">
+          <td>{{car.brand}}</td>
+          <td>{{car.model}}</td>
+          <td>{{car.year}}</td>
+          <td>
+              <button (click)="openEditModal(car, i)" class="btn btn-warning mb-2">Edytuj</button><br>
+              <button (click)="removeItem(i)" class="btn btn-danger">Usuń</button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <button (click)="openAddModal()" class="btn btn-info">Dodaj</button>

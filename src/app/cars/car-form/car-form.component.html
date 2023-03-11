@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add new car</h4>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" (ngSubmit)="onSave()">
+        <div class="form-group">
+          <label for="Brand">Brand</label>
+          <input formControlName="brand" class="form-control" id="Brand">
+        </div>
+        <div class="form-group">
+          <label for="Model">Model</label>
+          <input formControlName="model" class="form-control" id="Model">
+        </div>
+        <div class="form-group">
+          <label for="Year">Year</label>
+          <input formControlName="year" class="form-control" id="Year">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+</div>
